@@ -1,0 +1,43 @@
+# Persona 5: Dancing in Starlight para PC
+
+Port para PC de **Persona 5: Dancing in Starlight** (PlayStation 4, CUSA12380) para Windows 10/11.
+
+> **No se incluyen archivos del juego.** Necesitas tu propia copia del juego de PS4 como carpeta
+> (`eboot.bin`, `sce_module` y `sce_sys`).
+> Persona y Persona 5: Dancing in Starlight son marcas de ATLUS / SEGA. Este proyecto no está
+> afiliado a ellas.
+
+## Descargar y jugar
+
+1. Descarga el `.zip` desde la página de
+   [Releases](https://github.com/Piscacho/Persona-5-Dancing-in-Starlight-PC/releases/latest).
+2. Descomprímelo en una carpeta, por ejemplo `C:\Juegos\P5D`.
+3. Pon la carpeta del juego junto a ella como `juego\CUSA12380` (se detecta sola), o elígela en
+   el launcher: **Game → Carpeta del juego**.
+4. Abre **`Persona 5 Dancing in Starlight.exe`** y pulsa **PLAY**. Si Windows muestra "Windows
+   protegió tu PC", pulsa **Más información → Ejecutar de todas formas**.
+
+- `Play Persona 5 Dancing in Starlight.exe` arranca el juego directamente con los ajustes guardados.
+- Dentro del juego, **Insert** o **R3 + L2** abre el menú del port.
+- Los DLC se usan ya extraídos (carpetas `ADDCONT…`): cópialos en `dlc\` junto al launcher o elige
+  su carpeta en **Game → Carpeta de DLC**.
+- El modo de PlayStation VR no está disponible: el juego ve que no hay casco conectado.
+
+### Dónde se guarda todo
+
+- Partidas, caché de shaders y registro: carpeta `user\` junto al launcher (consérvala al actualizar).
+- Ajustes del juego: `p5d.ini`; ajustes del launcher: `%APPDATA%\p5d-launcher`.
+- Registro de la última partida: `user\last_run.log`.
+
+## Requisitos
+
+- Windows 10/11 de 64 bits.
+- Tarjeta gráfica con Vulkan 1.3 y controlador actualizado.
+
+## Créditos
+
+- [shadPS4](https://github.com/shadps4-emu/shadPS4): núcleo de video de PS4 a Vulkan.
+
+## Licencia
+
+GNU GPL v2 o posterior ([LICENSE](LICENSE)). Los componentes de terceros mantienen sus propias licencias.

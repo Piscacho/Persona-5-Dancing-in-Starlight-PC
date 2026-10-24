@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Persona 5: Dancing in Starlight
+Comment=PC port of Persona 5: Dancing in Starlight (bring your own game dump)
+Exec=AppRun
+Icon=p5d
+Categories=Game;
+Terminal=false
+StartupWMClass=p5d
