@@ -399,6 +399,10 @@ extern "C" int p5dgpu_choice_begin(const char* title, const char* const* items, 
     return 1;
 }
 
+extern "C" void p5dgpu_trophy_unlocked(int id, char grade, const char* name) {
+    P5dOverlay::ShowTrophy(id, grade, name ? name : "");
+}
+
 extern "C" int p5dgpu_choice_poll(void) {
     return P5dOverlay::PollChoice();
 }

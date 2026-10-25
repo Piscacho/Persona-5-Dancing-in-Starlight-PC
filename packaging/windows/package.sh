@@ -43,7 +43,7 @@ rm -rf -- out/stage
 mkdir -p "$dest/bin" "$dest/launcher"
 cp -r "out/pyi-dist/Persona 5 Dancing in Starlight/." "$dest/"
 llvm-strip -o "$dest/Play Persona 5 Dancing in Starlight.exe" out/p5d-play.exe
-cp launcher/p5d.ico launcher/p5d.png "$dest/launcher/"
+cp launcher/p5d.ico launcher/p5d.png launcher/brand.ttf launcher/brand-OFL.txt launcher/logo.png "$dest/launcher/"
 # The executables without debug information (out/ keeps the symbols for crash reports).
 for exe in p5d-probe.exe p5d-gpu-capabilities.exe; do
     llvm-strip --strip-debug -o "$dest/bin/$exe" "out/$exe"
