@@ -1,6 +1,8 @@
 # Persona 5: Dancing in Starlight para PC
 
-Port para PC de **Persona 5: Dancing in Starlight** (PlayStation 4, CUSA12380) para Windows 10/11.
+Port para PC de **Persona 5: Dancing in Starlight** (PlayStation 4) para Windows 10/11.
+Probado con la versión americana (CUSA12380); las de otras regiones se reconocen solas, pero aún no
+están probadas.
 
 > **No se incluyen archivos del juego.** Necesitas tu propia copia del juego de PS4 como carpeta
 > (`eboot.bin`, `sce_module` y `sce_sys`).
@@ -12,7 +14,7 @@ Port para PC de **Persona 5: Dancing in Starlight** (PlayStation 4, CUSA12380) p
 1. Descarga el `.zip` desde la página de
    [Releases](https://github.com/Piscacho/Persona-5-Dancing-in-Starlight-PC/releases/latest).
 2. Descomprímelo en una carpeta, por ejemplo `C:\Juegos\P5D`.
-3. Pon la carpeta del juego junto a ella como `juego\CUSA12380` (se detecta sola), o elígela en
+3. Pon la carpeta del juego junto a ella como `juego\CUSA12380` (se detecta sola, de cualquier región), o elígela en
    el launcher: **Game → Carpeta del juego**.
 4. Abre **`Persona 5 Dancing in Starlight.exe`** y pulsa **PLAY**. Si Windows muestra "Windows
    protegió tu PC", pulsa **Más información → Ejecutar de todas formas**.

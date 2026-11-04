@@ -115,11 +115,11 @@ def find_executable(name):
 
 
 def default_game_dir():
-    """The game dump next to the port: ../juego/CUSA12380 or ../CUSA12380."""
-    for candidate in (PORT.parent / 'juego' / 'CUSA12380', PORT.parent / 'CUSA12380'):
-        if (candidate / 'eboot.bin').is_file():
-            return candidate
-    return PORT.parent / 'CUSA12380'
+    """The game dump next to the port, any region: ../juego/<folder> or ../<folder>."""
+    if str(PORT / 'scripts') not in sys.path:
+        sys.path.insert(0, str(PORT / 'scripts'))
+    from game_id import default_game_dir as find
+    return find(PORT)
 
 
 def default_dlc_dir(data):

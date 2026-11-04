@@ -62,7 +62,7 @@ NO_WINDOW = getattr(subprocess, 'CREATE_NO_WINDOW', 0)
 NEW_GROUP = {} if WINDOWS else {'start_new_session': True}
 UI_FONT, MONO_FONT, SERIF_FONT = 'Segoe UI', 'Consolas', 'Georgia'
 # This build; GitHub release tags are windows-v<VERSION>.
-VERSION = '1.1.1'
+VERSION = '1.1.2'
 # Updates come from this port's GitHub releases (tags windows-v<VERSION>, one .zip asset).
 UPDATES = True
 RELEASES_API = 'https://api.github.com/repos/Piscacho/Persona-5-Dancing-in-Starlight-PC/releases/latest'
@@ -422,11 +422,9 @@ INI_DEFAULTS = {'upscaler': 'fsr3', 'preset': '1',
                 'frames_queued': '1',
                 'anisotropy': '0', 'vibration': '100', 'mouse_lock': '1'}
 def default_game_dir():
-    """The dump next to the port: ../juego/CUSA12380 (this layout) or ../CUSA12380."""
-    for candidate in (PORT_DIR.parent / 'juego' / 'CUSA12380', PORT_DIR.parent / 'CUSA12380'):
-        if (candidate / 'eboot.bin').is_file():
-            return candidate
-    return PORT_DIR.parent / 'CUSA12380'
+    """The dump next to the port, any region: ../juego/<folder> (this layout) or ../<folder>."""
+    from game_id import default_game_dir as find
+    return find(PORT_DIR)
 
 
 DISPLAY_MODES = [('windowed', ('Windowed',)), ('borderless', ('Borderless',)), ('fullscreen', ('Fullscreen',))]
@@ -3093,8 +3091,8 @@ class Launcher:
         if not self.collect():
             return
         if not game_info(self.app['game_dir']):
-            self.messagebox.showerror(APP_NAME, _('Choose the game folder with eboot.bin (CUSA12380).',
-                                                  'Выберите папку игры с eboot.bin (CUSA12380).'))
+            self.messagebox.showerror(APP_NAME, _('Choose the game folder with eboot.bin (PS4).',
+                                                  'Выберите папку игры с eboot.bin (PS4).'))
             self.show('game')
             return
         if not self.offer_system_files():
@@ -3380,8 +3378,8 @@ class Launcher:
             return
         game = self.var('game_dir', 'app').get()
         if not game_info(game):
-            self.messagebox.showerror(APP_NAME, _('Choose the game folder with eboot.bin (CUSA12380).',
-                                                  'Выберите папку игры с eboot.bin (CUSA12380).'))
+            self.messagebox.showerror(APP_NAME, _('Choose the game folder with eboot.bin (PS4).',
+                                                  'Выберите папку игры с eboot.bin (PS4).'))
             return
         self.root.configure(cursor='watch')
         self.root.update_idletasks()
